@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zuri task 1</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+        <div class="container">
+            <h1 data-testid="slackUserName">Geeky eddie</h1>
+            <img src="IMG_9067.jpg" alt="Your Slack username" data-testid="slackDisplayImage">
+            <p data-testid="currentDayOfTheWeek"></p>
+            <p data-testid="currentUTCTime"></p>
+            <p data-testid="myTrack">Frontend</p>
+            <a href="https://github.com/Geeky-eddie/zuri-1.git" data-testid="githubURL">GitHub Repository</a>
+        </div>
+        <script>
+
+document.addEventListener("DOMContentLoaded", function () {
+    const slackName = "Geeky eddie";
+    const slackProfilePictureURL = "IMG_9067.jpg";
+
+   
+    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const currentDate = new Date();
+    const currentDay = daysOfWeek[currentDate.getUTCDay()];
+
+    // const currentUTCTime = new Date().getTime();
+    function updateUTCTime() {
+        const currentUTCTime = Date.now();
+        document.querySelector("[data-testid='currentUTCTime']").textContent = "Current UTC Time (in milliseconds): " + currentUTCTime;
+    }
+
+   
+    updateUTCTime();
+
+  
+    setInterval(updateUTCTime, 1000);
+
+   
+    document.querySelector("[data-testid='slackUserName']").textContent = slackName;
+    document.querySelector("[data-testid='slackDisplayImage']").src = slackProfilePictureURL;
+    document.querySelector("[data-testid='currentDayOfTheWeek']").textContent = "Current Day: " + currentDay;
+});
+
+        </script>
+</body>
+</html>
