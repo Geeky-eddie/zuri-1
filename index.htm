@@ -8,7 +8,7 @@
 <body>
         <div class="container">
             <h1 data-testid="slackUserName">Geeky eddie</h1>
-            <img src="IMG_9067.jpg" alt="Your Slack username" data-testid="slackDisplayImage">
+            <img src="IMG_9067.jpg" alt="Geeky eddie" data-testid="slackDisplayImage">
             <p data-testid="currentDayOfTheWeek"></p>
             <p data-testid="currentUTCTime"></p>
             <p data-testid="myTrack">Frontend</p>
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // const currentUTCTime = new Date().getTime();
     function updateUTCTime() {
         const currentUTCTime = Date.now();
-        document.querySelector("[data-testid='currentUTCTime']").textContent = "Current UTC Time (in milliseconds): " + currentUTCTime;
+        document.querySelector("[data-testid='currentUTCTime']").textContent = currentUTCTime;
     }
 
    
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
    
     document.querySelector("[data-testid='slackUserName']").textContent = slackName;
     document.querySelector("[data-testid='slackDisplayImage']").src = slackProfilePictureURL;
-    document.querySelector("[data-testid='currentDayOfTheWeek']").textContent = "Current Day: " + currentDay;
+    document.querySelector("[data-testid='currentDayOfTheWeek']").textContent = currentDay;
 });
 
         </script>
